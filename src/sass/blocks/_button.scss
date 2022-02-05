@@ -1,0 +1,19 @@
+.btn {
+    width: 270px;
+    height: 55px;
+    background: $sky-blue-color;
+    color: $white-color;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.404);
+    padding: 12px 25px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-right: 0px;
+    transition: all 1s ease;
+    border: none;
+    &:hover {         
+        background: $green-color;         
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.479); 
+
+    }
+
+}

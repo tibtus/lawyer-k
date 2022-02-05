@@ -1,0 +1,787 @@
+.promo {
+  min-height: 100vh;
+  position: relative;
+  .container {
+    position: relative;    
+  }
+// block with a modal window 
+  .modal {
+    position: absolute;
+    top: 0;    
+    min-height: 100vh;
+    min-width:100%;
+    background-color: rgba(62, 67, 70, 0.39);
+    display: none;
+    justify-content:center;
+    align-items:center;
+    z-index: 2;
+    .modal__block {
+      display: block;
+      position: relative;
+      background-color: $white-color;
+      border: 3px solid $font-line;
+      border-radius: 25%;
+      width: 500px;
+      height: 500px;
+      box-sizing:border-box;
+      padding: 40px;
+      box-shadow: -2px -2px 4px rgba(62, 67, 70, 0.932); 
+       
+    .modal__content {
+      display: block;
+      
+      height: 100%;
+      
+      
+      .modal-close {
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        
+        
+        color: $sky-blue-color;
+        background-color: $white-color;
+        border: none;
+        cursor: pointer;
+        text-shadow: 2px 1px 4px rgba(62, 67, 70, 0.932); 
+        transition: all 0.6s ease-out ;
+        background-color: none;
+        &:hover {
+          color: $red-color;
+          transition: all 0.6s ease-out ;
+        }
+
+      }
+      .modal-form {
+        display: flex;
+        box-sizing:border-box;
+        padding: 40px;
+        margin-top: 50px;
+        
+        input {
+          height: 40px;
+          width: 100%;
+          margin-bottom: 20px;
+          border-radius: 5px;
+          border: 2px solid $sky-blue-color;
+          color: $font-color;
+          text-align: center;
+        }
+
+        button {
+          display: block;
+          width: 100%;
+          height: 50px;
+          margin-top: 30px;
+          text-shadow: 1px 1px 4px rgba(62, 67, 70, 0.932); 
+          box-shadow: 1px 1px 4px rgba(62, 67, 70, 0.932); 
+          color: $white-color;
+          background-color:  $sky-blue-color;
+          border: none;
+          transition: all 0.6s ease-out ;
+          &:hover {
+            background-color:  $red-color;
+            transition: all 0.6s ease-out ;
+          }
+        }
+      }
+    }  
+
+    }
+  }
+
+  .modal_active {
+    display: flex;
+  }
+
+// block wrapper
+
+  &__wrapper {
+    position: relative;   
+    height: 100vh;
+    background-color: $white-color;
+    color: $font-color;
+    display: grid;
+    grid-template-columns: 5% 95%;
+    grid-template-rows: 10% 90%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+   
+
+    /* loading a block with a  promo__wrapper__nav*/
+    
+
+    &__nav {
+      border-right: 1px solid $main-color;
+      grid-area: 1 / 1 / 3 / 2;
+      display: flex;
+      flex-direction: column;     
+
+      .nav__logo {
+        display: block;
+        flex-basis:10%;        
+        cursor: pointer;  
+        div {
+          display: block;
+          background: url('../img/logo/logo_sayt.png') no-repeat 50%/cover ;
+          width: 70px;
+          height: 70px;          
+          margin: 10% auto;
+          transition: all 1s ease-out ;
+          &:hover {
+            background: url('../img/logo/logo_sayt.svg') no-repeat 50%/cover ; 
+          }          
+        }
+
+      }
+      .nav__block {
+        display: block;
+        flex-basis:45%;
+      }
+      .nav__name {
+        display: block;
+        flex-basis:20%;   
+        
+        position: relative;
+        height: 100px;
+        
+        div {
+          display: block;
+          transform: rotate(-90deg);
+          color: $sky-blue-color;
+          width: 100px;
+          text-shadow: 2px 1px 4px rgba(62, 67, 70, 0.932);  
+        }
+        
+      }
+      .nav__prev {
+        display: block;
+        flex-basis:10%;
+        cursor: pointer;        
+          div {
+            display: block;
+            background: url('../img/logo/prev-arrow-grey.png') no-repeat 50%/cover ;
+            width: 70px;
+            height: 70px; 
+            margin: 10% auto;   
+            transition: all 0.5s ease-out ;
+            &:hover {
+              background: url('../img/logo/prev-arrow.png') no-repeat 50%/cover ; 
+            }
+
+          }
+      }
+      .nav__number {
+        display: block;
+        flex-basis:5%;   
+        .nav_circle {
+          display: block;
+          position: relative;
+          background: url('../img/logo/number-arrow-grey.png') no-repeat 50%/cover ;
+          width: 70px;
+          height: 70px;
+          margin: 10% auto;  
+          transition: all 1s ease-out ;      
+
+        }
+        .number_value {
+          position: absolute;
+          display: block;
+          top: 20%;
+          left: 42%;
+          color: $font-color;
+          text-shadow: 2px 2px 5px rgba(59, 64, 66, 0.932); 
+          
+        } 
+      }
+      .nav__next {
+        display: block;
+        flex-basis:10%;
+        cursor: pointer;        
+          div {
+            display: block;
+            background: url('../img/logo/next-arrow-grey.png') no-repeat 50%/cover ;
+            width: 70px;
+            height: 70px;
+            margin: 10% auto;  
+            transition: all 0.5s ease-out ;
+            &:hover {
+                background: url('../img/logo/next-arrow.png') no-repeat 50%/cover ; 
+            }  
+          }
+      }
+      
+    }  
+
+  /* loading a block with a  promo__wrapper__header*/
+
+    &__header {     
+      grid-area: 1 / 2 / 2 / 3;
+      display: flex;
+      justify-content:space-around;
+      .header__name {
+        display: block;   
+        flex-basis:50%;      
+        align-self:center;
+        div {
+          display: block;          
+          color: $sky-blue-color;
+          width: 200px;
+          text-shadow: 2px 1px 4px rgba(62, 67, 70, 0.932);  
+          span {
+            color: $black-color;
+          }
+                     
+        }
+        
+      }
+      .header__btn {        
+        display: block;            
+        cursor: pointer; 
+        align-self:center;
+      }
+      .header__burger {
+        display: block; 
+        cursor: pointer; 
+        align-self:center; 
+        
+                  
+        
+        .burder-line-header, .burder-line-bottom {
+          display: block; 
+          width: 40px;
+          height: 5px;;
+          background: $font-color; 
+          transition: 0.5s;  
+          margin: 0 0 0 auto; 
+          box-shadow: 2px 2px 4px rgba(62, 67, 70, 0.932);  
+                    
+
+        }
+        .burder-line-center {
+          display: block; 
+          width: 50px;
+          height: 5px;
+          background: $font-color;
+          margin: 8px 0px;
+          transition: 0.5s; 
+          box-shadow: 2px 2px 4px rgba(62, 67, 70, 0.932);  
+          
+        }        
+
+      }
+      .burger-active {
+        .burder-line-header {
+          -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+                   transform: rotate(-45deg) translate(-10px, 9px) ;                   
+                   background: $font-color;   
+                   box-shadow: 1px 1px 10px rgba(62, 67, 70, 0.932);                                    
+        }
+        .burder-line-center {
+          opacity: 0;
+        }
+        .burder-line-bottom {
+          -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+                   transform: rotate(45deg) translate(-9px, -8px) ;                   
+                   background: $font-color;    
+                   box-shadow: 1px 1px 10px rgba(62, 67, 70, 0.932);               
+        }
+      } 
+
+
+    }
+
+    /* loading a block with a  promo__wrapper__content*/
+    &__main {
+      
+      grid-area: 2 / 2 / 3 / 3; 
+      display: flex;
+      position: relative;
+
+      overflow: hidden;  
+
+      .main__content {
+        flex-basis:50%;
+        display: block;
+        position: relative;
+        box-sizing:border-box;
+        padding: 50px 100px;
+
+
+
+        
+        div {
+          display: block;          
+          color: $black-color;
+          width: 200px;
+          text-shadow: 2px 1px 4px rgba(62, 67, 70, 0.932);  
+          margin-bottom: 30px;
+          span {
+            color: $sky-blue-color; 
+          }
+
+          
+        }
+        h1 {
+          display: block;          
+          color: $main-color;  
+          width: 500px;        
+          text-shadow: 2px 1px 10px rgba(184, 220, 243, 0.932);  
+          margin-bottom: 30px;
+        }
+        .main__btn {
+          display: block;
+          width: 150px;          
+          margin-bottom: 30px;
+          
+        }
+
+
+
+      }
+
+      .main__slider {
+        flex-basis:50%;        
+        position: relative;
+        box-sizing:border-box;
+        
+
+        .presentation {
+          display: block;          
+          background: url('../img/slides/lawerk-img-1.jpg') no-repeat 50%/cover ;          
+          height: 100%;             
+          transition: all 2.5s ease-out ;
+          box-shadow: -1px 0px 2px rgba(62, 67, 70, 0.281);  
+           .copyright, .author {
+             display: block;
+             position: absolute;
+             bottom: 60px;
+             right: 50px;
+             text-shadow: -2px -2px 5px rgba(29, 30, 31, 0.774);
+             color:rgba(184, 220, 243, 0.932);
+              span {
+                color:rgba(184, 220, 243, 0.932);
+              }
+              a {  
+             
+                color:rgba(184, 220, 243, 0.932);
+                text-decoration: none;
+                
+              }
+           }
+           .author {
+              bottom: 30px;
+           }
+         
+        }
+
+      }
+
+         
+
+      .main__card {
+        display: flex;
+        position: absolute;
+        bottom: 0%;
+        left: 0%;
+        width: 65%;
+        height: 40%;
+        border: 1px solid $font-line;
+        transition: all 1.5s ease-out ;
+        opacity: 1;
+        
+
+        &-full { 
+          height: 70%;   
+        }
+                
+      
+        .main__card-desc {
+          display: flex;
+          flex-wrap: wrap;
+          flex-basis:95%;
+          
+          border: 3px solid $white-color;
+          color:rgba(184, 220, 243, 0.932);
+          background-color: $sky-blue-color;
+          transition: all 2.5s ease-out ;
+         /*  background-color: $font-color; */
+        
+         .card-desc-about {
+          display: flex;
+          justify-content:space-between;          
+          box-sizing: border-box;    
+          text-shadow: -2px -2px 5px rgba(29, 30, 31, 0.774); 
+             
+          h2 {
+            color: $white-color;
+            padding-bottom: 50px;
+            
+          }
+          span {
+            color: $black-color; 
+            
+          }
+            .about-name {
+              flex-basis:40%;
+              padding: 40px;
+              color: $white-color;
+            }
+            .about-text {
+              flex-basis:60%;
+              padding: 20px;
+              color: $black-color;
+              text-align: end;
+              text-shadow: -2px -2px 15px rgba(79, 88, 105, 0.644);
+              align-self:center;
+
+
+            }
+         }
+
+
+         .card-desc-pulication {
+          flex-basis:50%;
+          box-sizing: border-box;
+          display: flex;
+          justify-content:space-between;
+          flex-direction: column;
+          border: 1px solid $white-color;
+          background-color: $font-line;
+          /* background-color: $sky-blue-color; */
+          
+          .pulication-name {
+            color:$white-color;
+            padding: 40px 10px 10px 10px;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: $sky-blue-color;
+            /* background-color: $font-line; */
+            color: $white-color;
+            text-shadow: 2px 2px 2px rgba(52, 61, 66, 0.425);   
+            box-shadow: 0px 0px 2px rgba(110, 118, 122, 0.651);   
+          }
+          .pulication-desc{
+            color:$white-color;
+            text-shadow: 1px 1px 2px rgba(62, 67, 70, 0.932);   
+            
+            
+     
+            
+            padding: 20px ;
+            
+          }
+          .pulication-date{
+            color:$white-color;
+            text-shadow: 1px 1px 2px rgba(62, 67, 70, 0.932);   
+            padding: 0px  50px 10px 0;
+            text-align: end;
+          }
+
+         }
+        .card-desc-practice {
+          display: flex;
+          flex-direction: column;
+          background: $font-line;
+          width: 100%;
+          
+          .practice-name {          
+              display: block; 
+              position: relative;           
+              box-sizing:border-box;
+              margin-top: 30px;
+              margin-left: 60px;
+              align-self:center;
+              
+              color:$backg-color;
+              text-shadow: 1px 1px 2px rgba(62, 67, 70, 0.932);   
+              @include before_circle;
+            
+            span {
+              color:$white-color;
+            }
+          }
+
+
+
+        }
+
+        .team {
+          display: flex;
+          justify-content:space-between;
+          box-sizing:border-box;          
+          width: 100%;
+
+          .team_photo {
+            display: block;
+            flex-basis:50%;
+            width: 100%;
+            height: 100%;
+            
+            div {
+              display: block;
+              background: url('../img/slides/lawerk-img-7.jpg') no-repeat 50%/cover ;   
+              width: 100%;
+              height: 100%;
+            }
+          }
+//tut
+          .team_detail{
+            display: block;
+            flex-basis:50%;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing:border-box;
+            background-color: $font-line;
+            color: $white-color;
+            text-shadow: 2px 2px 2px rgba(52, 61, 66, 0.425);   
+            box-shadow: -2px 1px 2px rgba(110, 118, 122, 0.651);   
+
+            .team_name {
+              display: block;
+              color: $sky-blue-color;
+              margin-bottom: 20px;
+            }
+
+            .team_position {
+              display: block;
+              color: $white-color;
+               
+              margin-bottom: 40px;
+            }
+
+            .team_direction {
+              display: block;
+              color: $white-color;
+              
+              width: 60%;
+              margin-bottom: 100px;
+            }
+
+            .team_vcard {
+              display: block;
+              
+              cursor: pointer;
+              text-align: center;
+              a {
+                text-decoration: none;
+                color: $white-color;
+              }
+            }
+
+          }
+
+          
+
+
+        }
+        .contact {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          background-color: $font-line;
+          color: $white-color;
+          box-sizing:border-box;
+          text-shadow: 2px 2px 2px rgba(52, 61, 66, 0.425);   
+          
+          
+
+
+          .contact-footer {
+            flex-basis:20%;
+            display: block;               
+            margin: 0 auto;            
+            a {
+              text-decoration: none;
+              background-color: $font-line;
+              color: $white-color;
+            }
+          }
+
+          .contact-menu {
+            flex-basis:80%;
+            display: flex;
+            width: 100%;
+            margin-top: 80px;
+
+            .contact-menu-address {
+             
+              width: 100%;
+              background-color: $font-line;
+              color: $black-color;
+              text-align: center;
+              font-weight: 700; 
+              a {
+                display: inline-block;
+                text-decoration: none;
+                margin-top: 10px;
+                color: $white-color;
+                font-weight: 700;  
+              }
+            }
+
+            .contact-menu-social {              
+              width: 100%;
+              display: flex;
+              .social-facebook {
+                
+                flex-basis:20%;
+                a {
+                  text-decoration: none;
+                  display: block;
+                  background: url('../img/logo/facebook.png') no-repeat 50%/cover ;
+                  width: 75px;
+                  height: 75px;          
+                  margin: 25px auto; 
+
+                }
+              }
+              .social-linkedin {
+                
+                flex-basis:20%;
+                a {
+                  text-decoration: none;
+                  display: block;
+                  background: url('../img/logo/linkedin.png') no-repeat 50%/cover ;
+                  width: 75px;
+                  height: 75px;          
+                  margin: 25px auto; 
+                }
+              }
+              .social-instagram {
+                
+                flex-basis:20%;
+                a {
+                  text-decoration: none;
+                  display: block;
+                  background: url('../img/logo/instagram.png') no-repeat 50%/cover ;
+                  width: 75px;
+                  height: 75px;          
+                  margin: 25px auto; 
+                }
+              }
+            }
+
+          }
+
+        }
+
+
+
+        }
+
+        .main__card-name-block {
+          display: block;
+          position: relative;
+          flex-basis:5%;
+          border: 3px solid $white-color;
+          background-color: $font-color;
+          
+          /* background-color: $sky-blue-color; */
+          span {
+            display: block;
+            position: absolute;
+            transform: rotate(-90deg);
+            color: $white-color;                     
+            width: 100%;            
+            bottom: 30%;
+            right: 0%;
+            text-shadow: 2px 1px 4px rgba(62, 67, 70, 0.932);  
+            
+          }
+        }
+
+        
+      }
+
+       .curtains {
+        background-color: $font-color;
+        transition: all 1.0s ease-out ;
+        opacity: 0.5;
+        
+      }
+
+
+      .card-hide {        
+        bottom: -100%;
+        transition: all 1.5s ease-out ;
+        opacity: 0;
+        
+      }
+
+
+      .main__burger {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0%;
+        right: 0%; 
+        height: 100%;
+        width: 20%;
+        background-color: $font-color;
+        box-sizing:border-box;
+        justify-content:center;
+        transition: all 1s ease-out ;
+        opacity: 0.9;
+        
+        .main__burger-menu {
+         display: block;
+         
+          color: $white-color; 
+          
+          margin-top: 30px;
+          text-align: center;
+          text-shadow: 2px 2px 4px rgba(73, 92, 105, 0.932);  
+          transition: all 1.0s ease-out ;
+          cursor: pointer; 
+          &:hover {
+            transition: all 1.0s ease-out ;
+            color: $sky-blue-color; 
+            
+          }
+
+        }
+        .active-block {
+          
+          color: $sky-blue-color; 
+          font-size: 35px;       
+          
+        }
+        
+        .nav__logo {
+          display: block;
+          flex-basis:10%;       
+          cursor:auto; 
+          div {
+            display: block;
+            background: url('../img/logo/logo_sayt.svg') no-repeat 50%/cover ; 
+            width: 70px;
+            height: 70px;          
+            margin: 10% auto;
+ 
+         
+          }
+
+        }
+
+      } 
+
+      .burger-hide {        
+        right: -100%;
+        transition: all 1.5s ease-out ;
+        opacity: 0;
+        
+      }
+
+
+    } 
+    
+  }
+
+
+
+
+  
+}

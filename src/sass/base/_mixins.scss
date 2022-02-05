@@ -1,0 +1,36 @@
+@mixin before_circle {
+    &:before{
+        content: '';
+        position: absolute;        
+        z-index: 1;
+        top: -3px;
+        left: -40px;
+        width: 25px;
+        height: 25px;
+        background: url('../img/logo/ok.svg') no-repeat 50%/cover ;
+        color: $white-color;
+        
+        
+
+
+    }
+}
+
+@mixin before_circle_active {
+    &:before{
+        content: '';
+        position: absolute;        
+        z-index: 1;
+        top: -3px;
+        left: -40px;
+        width: 25px;
+        height: 25px;
+        background: url('../img/logo/ok.svg') no-repeat 50%/cover ;
+        color: $white-color;
+        
+
+
+    }
+}
+
+

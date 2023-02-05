@@ -8,6 +8,10 @@ Use the package manager [Gulp](https://www.npmjs.com/package/gulp) to install.
 npm i 
 ```
 
+```bash
+the index.html file dist folder is ready to view the project
+```
+
 ## List of tasks and completed work in the project
 
 ```Work
